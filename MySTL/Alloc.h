@@ -22,7 +22,7 @@ namespace MySTL {
     private:
         static char *start_free;
         static char *end_free;
-        static size_t *heap_size;
+        static size_t heap_size;
     private:
         static size_t ROUND_UP(size_t bytes){
             return ((bytes) + EAlign::ALIGN - 1 & EAlign::ALIGN - 1);
@@ -31,7 +31,7 @@ namespace MySTL {
             return ((bytes+EAlign::ALIGN-1) / EAlign::ALIGN -1);
         }
         static void *refill(size_t n);
-        static char *chunk_allov(size_t size, size_t& nobgs);
+        static char *chunk_alloc(size_t size, size_t& nobgs);
 
     public:
         static void *allcate(size_t bytes);
