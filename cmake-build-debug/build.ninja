@@ -49,6 +49,13 @@ cmake_ninja_workdir = /Users/wanglei/clion_project/GitProject/MySTL/cmake-build-
 
 build cmake_object_order_depends_target_MySTL: phony || CMakeFiles/MySTL.dir
 
+build CMakeFiles/MySTL.dir/MySTL/Detail/Alloc.cpp.o: CXX_COMPILER__MySTL_Debug /Users/wanglei/clion_project/GitProject/MySTL/MySTL/Detail/Alloc.cpp || cmake_object_order_depends_target_MySTL
+  DEP_FILE = CMakeFiles/MySTL.dir/MySTL/Detail/Alloc.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/wanglei/clion_project/GitProject/MySTL/MySTL
+  OBJECT_DIR = CMakeFiles/MySTL.dir
+  OBJECT_FILE_DIR = CMakeFiles/MySTL.dir/MySTL/Detail
+
 build CMakeFiles/MySTL.dir/MySTL/main.cpp.o: CXX_COMPILER__MySTL_Debug /Users/wanglei/clion_project/GitProject/MySTL/MySTL/main.cpp || cmake_object_order_depends_target_MySTL
   DEP_FILE = CMakeFiles/MySTL.dir/MySTL/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
@@ -64,7 +71,7 @@ build CMakeFiles/MySTL.dir/MySTL/main.cpp.o: CXX_COMPILER__MySTL_Debug /Users/wa
 #############################################
 # Link the executable MySTL
 
-build MySTL: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/MySTL/main.cpp.o
+build MySTL: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/MySTL/Detail/Alloc.cpp.o CMakeFiles/MySTL.dir/MySTL/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/MySTL.dir
   POST_BUILD = :

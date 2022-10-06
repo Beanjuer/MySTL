@@ -25,13 +25,13 @@ namespace MySTL {
         static size_t heap_size;
     private:
         static size_t ROUND_UP(size_t bytes){
-            return ((bytes) + EAlign::ALIGN - 1 & EAlign::ALIGN - 1);
+            return (((bytes) + EAlign::ALIGN - 1) & ~(EAlign::ALIGN - 1));
         }
         static size_t FREELIST_INDEX(size_t bytes){
             return ((bytes+EAlign::ALIGN-1) / EAlign::ALIGN -1);
         }
-        static void *refill(size_t n);
-        static char *chunk_alloc(size_t size, size_t& nobgs);
+        static void *refill(size_t bytes);
+        static char *chunk_alloc(size_t bytes, size_t& nobgs);
 
     public:
         static void *allcate(size_t bytes);
